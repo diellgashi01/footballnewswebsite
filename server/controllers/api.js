@@ -13,7 +13,13 @@ module.exports = class API {
 
     //fetch post by ID
     static async fetchPostByID(req, res){
-        res.send("Fetch Post By ID");
+        const id = req.params.id;
+        try{
+            const post = await Post.findById(id);
+            res.status(200).json(post);
+        } catch(err){
+            res.status(404).json({message: err.message});
+        }
     }
 
     //create a post
