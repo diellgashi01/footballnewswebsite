@@ -1,4 +1,5 @@
 const Post = require('../models/posts');
+const fs = require("fs");
 
 module.exports = class API {
     //fetch all posts
@@ -37,7 +38,28 @@ module.exports = class API {
 
     //update a post
     static async updatePost(req, res){
-        res.send("Update Post");
+        const id = req.params.id;
+        let new_image = '';
+        if(req.file){
+            new_image = req.file.filename;
+            try{
+                fs.unlinkSync('./uploads'+req.body.old_image);
+               
+            } catch(err) {
+               console.log(err); 
+            }
+        }else{
+            new_image = req.body.old_image;
+        }
+        const newPost = req.body;
+        newPost.image = new_image;
+
+        try{
+            await Post.findByIdAndUpdate(id, newPost);
+            res.status(200).json({message: 'Post updated successfully'});
+        }catch(err){
+            res.status(404).json({message: err.message});
+        }
     }
 
     //delete a post
