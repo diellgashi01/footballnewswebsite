@@ -64,6 +64,19 @@ module.exports = class API {
 
     //delete a post
     static async deletePost(req, res){
-        res.send("Delete Post");
+        const id = req.params.id;
+        try{
+            const result = await Post.findByIdAndDelete(id);
+            if(result.image != '') {
+                try{
+                    fs.unlinkSync('./uploads/'+ result.image);
+                }catch(err) {
+                    console.log(err);
+                }
+            }
+            res.status(200).json({message: 'Post deleted successfully'});
+        }catch(err) {
+            res.status(404).json({message: err.message});
+        }
     }
 };
