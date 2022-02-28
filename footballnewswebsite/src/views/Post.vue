@@ -1,5 +1,5 @@
 <template>
-    <v-conatiner>
+    <v-container>
         <v-row no-gutters>
             <v-col sm="10" class="pa-4 mx-auto">
                <v-card class="pa-2">
@@ -25,7 +25,7 @@
                 </v-card> 
             </v-col>
         </v-row>
-    </v-conatiner>
+    </v-container>
 </template>
 
 <script>
@@ -37,7 +37,7 @@ export default {
         };
     },
     async created(){
-        const response = await API.getPostByID(this.$route.params.id)
+        const response = await API.getPostByID(this.$route.params.id);
         this.post = response;
     },
 };
