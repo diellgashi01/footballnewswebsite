@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-row no-gutters>
+    <v-row>
       <v-col sm="4" class="pa-3" v-for="post in posts" :key="post._id">
         <v-card class="pa-1" :to="{ name: 'post', params: { id: post._id }}">
           <v-img height="250" :src="`/${post.image}`"></v-img>
@@ -20,7 +20,6 @@
 </template>
 
 <script>
-
 import API from "../api";
 export default {
   name: 'HomeView',

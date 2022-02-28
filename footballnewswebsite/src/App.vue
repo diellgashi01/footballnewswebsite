@@ -14,7 +14,7 @@
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
-      <v-devider></v-devider>
+      <v-divider></v-divider>
       <v-list dense>
       <v-list-item-group
         color="primary">

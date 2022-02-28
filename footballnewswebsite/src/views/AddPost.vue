@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-row no-gutters>
-            <v-vol sm="10" class="mx-auto">
+            <v-col sm="10" class="mx-auto">
                 <v-card class="pa-5">
                     <v-card-title>Add New Post</v-card-title>
                     <v-divider></v-divider>
@@ -13,7 +13,7 @@
                         <v-btn type="submit" class="mt-3" color="primary">Add Post</v-btn>
                     </v-form> 
                 </v-card>
-            </v-vol>
+            </v-col>
         </v-row>
     </v-container>
 </template>
@@ -34,14 +34,14 @@ export default {
     },
     methods: {
         selectFile(file){
-            this.image - file[0];
+            this.image = file[0];
         },
         async submitForm(){
-            const fromData = new FormData();
-            fromData.append('image', this.image);
-            fromData.append('title', this.post.title);
-            fromData.append('category', this.post.category);
-            fromData.append('content', this.post.content);
+            const formData = new FormData();
+            formData.append('image', this.image);
+            formData.append('title', this.post.title);
+            formData.append('category', this.post.category);
+            formData.append('content', this.post.content);
             if(this.$refs.form.validate()){
                 const response = await API.addPost(formData);
                 this.$router.push({ name: 'home', params: {message: response.message}});
