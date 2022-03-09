@@ -54,6 +54,9 @@
         { title: 'Home', icon: 'mdi-home',link: "/"},
         { title: 'Add Post', icon: 'mdi-note-plus', link:"/add-post" },
         { title: 'About', icon: 'mdi-help-box', link:"/about" },
+        { title: 'Profile', icon: 'mdi-account-details', link:"/profile" },
+        { title: 'Dashboard', icon: 'mdi-application', link:"/dashboard" },
+        { title: 'Login', icon: 'mdi-account', link:"/login" },
       ], 
 }),
   }
