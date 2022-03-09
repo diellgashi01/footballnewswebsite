@@ -6,11 +6,12 @@
     >
       <v-list-item>
         <v-list-item-content>
+          <v-img src="https://thumb9.shutterstock.com/mosaic_250/259077216/1727356513/stock-vector-vector-soccer-ball-on-white-background-european-football-logo-football-ball-design-vector-1727356513.jpg" max-height="150" max-width="150"></v-img>
           <v-list-item-title>
-            Testing
+            Fotmob
           </v-list-item-title>
           <v-list-item-subtitle>
-            Football things
+            Latest Football News
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
@@ -36,7 +37,7 @@
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Application</v-toolbar-title>
+      <v-toolbar-title>Fotmob</v-toolbar-title>
     </v-app-bar>
 
     <v-main>
