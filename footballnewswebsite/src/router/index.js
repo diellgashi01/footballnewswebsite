@@ -6,8 +6,10 @@ import Post from '../views/Post.vue'
 import EditPost from '../views/EditPost.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
+import Logout from '../views/Logout.vue'
 import Profile from '../views/Profile.vue'
 import Dashboard from '../views/Dashboard.vue'
+import store from '.././store'
 
 
 
@@ -23,6 +25,9 @@ const routes = [
     path: "/add-post",
     name: "add-post",
     component: AddPost,
+    meta:{
+      requiresAuth: true
+    }
   },
   {
     path: "/post/:id",
@@ -33,26 +38,46 @@ const routes = [
     path: "/edit-post/:id",
     name: "edit-post",
     component: EditPost,
+    meta:{
+      requiresAuth: true
+    }
   },
   {
     path: "/login",
     name: "login",
     component: Login,
+    meta:{
+      requiresGuest: true
+    }
   },
   {
     path: "/register",
     name: "register",
     component: Register,
+    meta:{
+      requiresGuest: true
+    }
+  },
+  {
+    path: "/logout",
+    name: "logout",
+    component: Logout,
   },
   {
     path: "/profile",
     name: "profile",
     component: Profile,
+    meta:{
+      requiresAuth: true
+    }
   },
   {
     path: "/dashboard",
     name: "dashboard",
     component: Dashboard,
+    meta:{
+      requiresAuth: true
+    }
   },
   {
     path: "/about",
@@ -68,6 +93,26 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if(to.matched.some(record => record.meta.requiresAuth)){
+    if(!store.getters.isLoggedIn){
+      //Redirect to the Login Page
+      next('/login');
+    } else{
+      next();
+    }
+  } else if(to.matched.some(record => record.meta.requiresGuest)){
+    if(store.getters.isLoggedIn){
+      //Redirect to the Login Page
+      next('/profile');
+    } else{
+      next();
+    }
+  } else{
+    next()
+  }
 })
 
 export default router

@@ -1,5 +1,6 @@
 import axios from 'axios';
 const url = "/api/post";
+const url2 = "http://localhost:4000/api/users";
 
 export default class API {
     //to get all the posts from the server
@@ -25,6 +26,21 @@ export default class API {
     //to delete a post
     static async deletePost(id){
         const res = await axios.delete(`${url}/${id}`);
+        return res.data;
+    }
+
+    static async getAllUser(){
+        const res = await axios.get(url2);
+        return res.data;
+    }
+
+    static async getUserByID(id){
+        const res = await axios.get(`${url2}/${id}`);
+        return res.data;
+    }
+
+    static async deleteUser(id){
+        const res = await axios.delete(`${url2}/${id}`);
         return res.data;
     }
 }
