@@ -13,14 +13,14 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody v-for="user in users">
+        <tbody v-for="user in users" v-bind:key="user._id">
             <tr>
                 <td>{{ user.name }}</td>
                 <td>{{ user.username }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.role }}</td>
                 <td>
-                    <button type="button" class="btn btn-danger text-white">Delete</button>
+                    <button type="button" class="btn btn-danger text-white" >Delete</button>
                 </td>
             </tr>
         </tbody>
@@ -32,7 +32,6 @@
 import API from '../api';
 import axios from 'axios';
 import { mapActions, mapGetters } from 'vuex';
-const url2 = "http://localhost:4000/api/users";
 
 export default{
     data(){
