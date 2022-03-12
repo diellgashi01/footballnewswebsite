@@ -1,6 +1,7 @@
 <template>
 <center>
     <br>
+    <h2>Admin Dashboard - Registered Users</h2>
     <br>
     <table class="table table-bordered">
         <thead>
@@ -18,7 +19,9 @@
                 <td>{{ user.username }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.role }}</td>
-                <td></td>
+                <td>
+                    <button type="button" class="btn btn-danger text-white">Delete</button>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -28,6 +31,8 @@
 <script>
 import API from '../api';
 import axios from 'axios';
+import { mapActions, mapGetters } from 'vuex';
+const url2 = "http://localhost:4000/api/users";
 
 export default{
     data(){
