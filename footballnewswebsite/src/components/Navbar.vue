@@ -23,10 +23,10 @@
       <router-link to="/" style="text-decoration: none; color: inherit;">
         <v-list-item>
           <v-list-item-icon>
-            <v-icon>mdi-home</v-icon>
+            <v-icon>mdi-newspaper</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title router-link="/">Home</v-list-item-title>
+            <v-list-item-title router-link="/">News</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </router-link>  
@@ -38,6 +38,17 @@
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>About</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </router-link>
+
+      <router-link v-if="isLoggedIn" to="/contact-us" style="text-decoration: none; color: inherit;">
+        <v-list-item>
+          <v-list-item-icon>
+            <v-icon>mdi-application-edit-outline</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Contact Us</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </router-link>

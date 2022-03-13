@@ -5,8 +5,6 @@
     <p>Fotmob is a Football-oriented news site focused on bringing the latest football news in one page!</p>
     <p>We strive to bring the latest news in all the major football leagues and competitions.</p>
     <br>
-    <h2>Contact us Below!</h2>
-    <p><b>Phone Number: </b>+38345145489</p>
-    <p><b>Email: </b>contact@fotmob.com</p>
+    <p><b>How to contact us:</b> In order to contact you must register to our website, and then you can message us via our contact form!</p>
   </center>
 </template>

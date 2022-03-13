@@ -1,30 +1,11 @@
 <template>
 <center>
     <br>
-    <h2>Admin Dashboard - Registered Users</h2>
-    <br>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Username</th>
-                <th scope="col">Email</th>
-                <th scope="col">Role</th>
-                <th scope="col">Actions</th>
-            </tr>
-        </thead>
-        <tbody v-for="user in users" v-bind:key="user._id">
-            <tr>
-                <td>{{ user.name }}</td>
-                <td>{{ user.username }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.role }}</td>
-                <td>
-                    <button type="button" class="btn btn-danger text-white" >Delete</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <h2>Welcome to Admin Dashboard</h2>
+    <p>Below you can check out the registered users and the messages that have been sent via Contact Form!</p>
+    <a href="/users" type="button" class="btn btn-primary text-white">Show Registered Users</a> &nbsp;
+    <a href="/messages" type="button" class="btn btn-success text-white"> &nbsp; Show Messages &nbsp; </a>
+    
 </center>
 </template>
 
