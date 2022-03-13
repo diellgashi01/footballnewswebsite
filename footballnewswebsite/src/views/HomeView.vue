@@ -8,7 +8,7 @@
             {{ post.category }}
           </v-btn>
           <v-card-title class="headline">
-            {{post.title}}
+            {{post.title.substring(0, 57) + "..."}}
           </v-card-title>
           <v-card-text class="py-0">
             <p>{{post.content.substring(0, 100) + "..."}}</p>

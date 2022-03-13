@@ -2,9 +2,8 @@
 <center>
     <br>
     <h2>Welcome to Admin Dashboard</h2>
-    <p>Below you can check out the registered users and the messages that have been sent via Contact Form!</p>
+    <p>Below you can check out the registered users by clicking the button below!</p>
     <a href="/users" type="button" class="btn btn-primary text-white">Show Registered Users</a> &nbsp;
-    <a href="/messages" type="button" class="btn btn-success text-white"> &nbsp; Show Messages &nbsp; </a>
     
 </center>
 </template>

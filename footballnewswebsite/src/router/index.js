@@ -11,8 +11,6 @@ import Profile from '../views/Profile.vue'
 import Dashboard from '../views/Dashboard.vue'
 import store from '.././store'
 import Users from '../views/Users.vue'
-import Messages from '../views/Messages.vue'
-import ContactUs from '../views/ContactUs.vue'
 
 
 
@@ -41,14 +39,6 @@ const routes = [
     path: "/edit-post/:id",
     name: "edit-post",
     component: EditPost,
-    meta:{
-      requiresAuth: true
-    }
-  },
-  {
-    path: "/contact-us",
-    name: "contact-us",
-    component: ContactUs,
     meta:{
       requiresAuth: true
     }
@@ -94,14 +84,6 @@ const routes = [
     path: "/users",
     name: "users",
     component: Users,
-    meta:{
-      requiresAuth: true
-    }
-  },
-  {
-    path: "/messages",
-    name: "messages",
-    component: Messages,
     meta:{
       requiresAuth: true
     }
